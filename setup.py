@@ -2,17 +2,25 @@ from setuptools import setup, find_packages
 import sys, os
 
 version = '0.1'
+description = open('README.txt', 'rb').read()
 
 setup(name='descartes',
       version=version,
       description="Use geometric objects as matplotlib paths and patches",
-      long_description="""\
-""",
-      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      long_description=description,
+      classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Topic :: Scientific/Engineering :: GIS'
+      ],
       keywords='matplotlib gis geometry',
       author='Sean Gillies',
       author_email='sean.gillies@gmail.com',
-      url='http://bitbucket.com/sgillies/descartes',
+      url='http://bitbucket.org/sgillies/descartes/',
       license='BSD',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
