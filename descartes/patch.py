@@ -10,15 +10,13 @@ def PolygonPatch(polygon, **kwargs):
         vals = ones(n, dtype=Path.code_type) * Path.LINETO
         vals[0] = Path.MOVETO
         return vals
-    def pathify(ob):
-        # Convert coordinates to path vertices. Objects produced by Shapely's
-        # analytic methods have the proper coordinate order, no need to sort.
-        vertices = concatenate(
-                    [asarray(ob.exterior)] 
-                    + [asarray(r) for r in ob.interiors])
-        codes = concatenate(
-                [coding(ob.exterior)] 
-                + [coding(r) for r in ob.interiors])
-        return Path(vertices, codes)
-    return PathPatch(pathify(polygon), **kwargs)
+    # Convert coordinates to path vertices. Objects produced by Shapely's
+    # analytic methods have the proper coordinate order, no need to sort.
+    vertices = concatenate(
+                    [asarray(polygon.exterior)] 
+                    + [asarray(r) for r in polygon.interiors])
+    codes = concatenate(
+                [coding(polygon.exterior)] 
+                + [coding(r) for r in polygon.interiors])
+    return PathPatch(Path(vertices, codes), **kwargs)
 
