@@ -17,8 +17,10 @@ class Polygon(object):
                 or self.context['coordinates'][0])
     @property
     def interiors(self):
-        return (getattr(self.context, 'interiors', [])
-                or self.context['coordinates'][1:])
+        value = getattr(self.context, 'interiors', None)
+        if value is None:
+            value = self.context['coordinates'][1:]
+        return value
 
 
 def PolygonPath(polygon):
