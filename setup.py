@@ -17,7 +17,7 @@ setup(name='descartes',
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering :: GIS'
       ],
-      keywords='matplotlib gis geometry',
+      keywords='matplotlib gis geojson geometry',
       author='Sean Gillies',
       author_email='sean.gillies@gmail.com',
       url='http://bitbucket.org/sgillies/descartes/',
