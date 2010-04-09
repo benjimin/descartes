@@ -59,5 +59,8 @@ Example::
 
 See also: examples/patches.py.
 
+Descartes is not associated with the identically named and apparently defunct
+project at http://descartes.sourceforge.net/.
+
 .. _Shapely: http://gispython.org/lab/wiki/Shapely
 

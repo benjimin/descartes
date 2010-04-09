@@ -6,10 +6,13 @@ from numpy import asarray, concatenate, ones
 class Polygon(object):
     # Adapt Shapely or GeoJSON/geo_interface polygons to a common interface
     def __init__(self, context):
-        self.context = context
+        if hasattr(context, 'interiors'):
+            self.context = context
+        else:
+            self.context = getattr(context, '__geo_interface__', context)
     @property
     def geom_type(self):
-        return (getattr(self.context, 'geom_type', None) 
+        return (getattr(self.context, 'geom_type', None)
                 or self.context['type'])
     @property
     def exterior(self):
@@ -48,4 +51,3 @@ def PolygonPatch(polygon, **kwargs):
     """Constructs a matplotlib patch from a Shapely or GeoJSON-like
     object with full support for polygon holes"""
     return PathPatch(PolygonPath(polygon), **kwargs)
-

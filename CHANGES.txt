@@ -1,0 +1,11 @@
+0.1.2 (2010-04-09)
+------------------
+- Add support for the Python geo interface.
+
+0.1.1 (2010-04-08)
+------------------
+- Add support for GeoJSON-like dicts.
+
+0.1   (2010-04-07)
+------------------
+- Make path patches from Shapely polygons.
