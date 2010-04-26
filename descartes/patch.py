@@ -1,3 +1,5 @@
+"""Paths and patches"""
+
 from matplotlib.patches import PathPatch
 from matplotlib.path import Path
 from numpy import asarray, concatenate, ones
@@ -28,7 +30,7 @@ class Polygon(object):
 
 def PolygonPath(polygon):
     """Constructs a compound matplotlib path from a Shapely or GeoJSON-like
-    object"""
+    geometric object"""
     this = Polygon(polygon)
     assert this.geom_type == 'Polygon'
     def coding(ob):
@@ -48,6 +50,17 @@ def PolygonPath(polygon):
 
 
 def PolygonPatch(polygon, **kwargs):
-    """Constructs a matplotlib patch from a Shapely or GeoJSON-like
-    object with full support for polygon holes"""
+    """Constructs a matplotlib patch from a geometric object
+    
+    The `polygon` may be a Shapely or GeoJSON-like object with or without holes.
+    The `kwargs` are those supported by the matplotlib.patches.Polygon class
+    constructor. Returns an instance of matplotlib.patches.PathPatch.
+
+    Example (using Shapely Point and a matplotlib axes):
+
+      >>> b = Point(0, 0).buffer(1.0)
+      >>> patch = PolygonPatch(b, fc='blue', ec='blue', alpha=0.5)
+      >>> axis.add_patch(patch)
+
+    """
     return PathPatch(PolygonPath(polygon), **kwargs)

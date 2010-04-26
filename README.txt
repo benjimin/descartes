@@ -55,7 +55,8 @@ Example::
   ax.set_ylim(-1, 3)
   
   fig.subplots_adjust(0.0, 0.0, 1.0, 1.0, 0.1)
-  fig.savefig('buffering.png')
+
+  pyplot.show()
 
 See also: examples/patches.py.
 

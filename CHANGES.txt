@@ -1,3 +1,7 @@
+1.0   (2010-04-26)
+------------------
+- Complete documentation and example.
+
 0.1.2 (2010-04-09)
 ------------------
 - Add support for the Python geo interface.
