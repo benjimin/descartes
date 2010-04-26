@@ -1,11 +1,11 @@
 from matplotlib import pyplot
 from shapely.geometry import *
 
-from descartes.patch import PolygonPatch
+from descartes import PolygonPatch
 
 
 # Create a matplotlib figure
-fig = pyplot.figure(num=1, figsize=(6, 3), dpi=180)
+fig = pyplot.figure(num=1, figsize=(10, 4), dpi=180)
 
 # Create a polygon with 2 holes using buffer and difference methods
 polygon = Point(0, 0).buffer(10.0).difference(

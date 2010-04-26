@@ -1,7 +1,18 @@
-from setuptools import setup, find_packages
-import sys, os
+import os
+import sys
+import warnings
 
-version = '0.1.2'
+try:
+    from distribute_setup import use_setuptools
+    use_setuptools()
+except:
+    warnings.warn(
+    "Failed to import distribute_setup, continuing without distribute.", 
+    Warning)
+
+from setuptools import setup, find_packages
+
+version = '1.0'
 description = open('README.txt', 'rb').read()
 
 setup(name='descartes',
@@ -9,7 +20,7 @@ setup(name='descartes',
       description="Use geometric objects as matplotlib paths and patches",
       long_description=description,
       classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: BSD License',
@@ -25,10 +36,4 @@ setup(name='descartes',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
-      install_requires=[
-          # -*- Extra requirements: -*-
-      ],
-      entry_points="""
-      # -*- Entry points: -*-
-      """,
       )
