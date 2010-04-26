@@ -20,7 +20,7 @@ setup(name='descartes',
       description="Use geometric objects as matplotlib paths and patches",
       long_description=description,
       classifiers=[
-        'Development Status :: 5 - Production',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: BSD License',
