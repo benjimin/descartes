@@ -7,7 +7,7 @@ Use Shapely_ or GeoJSON-like geometric objects as matplotlib paths and patches
    :width: 800
    :height: 320
 
-Requires: matplotlib, numpy, and optionally Shapely 1.2.
+Requires: matplotlib, numpy, and optionally Shapely 1.2+.
 
 Example::
 

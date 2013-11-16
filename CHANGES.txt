@@ -1,5 +1,9 @@
-1.0   (2010-04-26)
+1.0.1 (2013-11-15)
 ------------------
+- Get long description in 'r' mode so setup works on Python 3.
+
+1.0 (2010-04-26)
+----------------
 - Complete documentation and example.
 
 0.1.2 (2010-04-09)
