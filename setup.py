@@ -2,18 +2,10 @@ import os
 import sys
 import warnings
 
-try:
-    from distribute_setup import use_setuptools
-    use_setuptools()
-except:
-    warnings.warn(
-    "Failed to import distribute_setup, continuing without distribute.", 
-    Warning)
-
 from setuptools import setup, find_packages
 
-version = '1.0'
-description = open('README.txt', 'rb').read()
+version = '1.0.1'
+description = open('README.txt', 'r').read()
 
 setup(name='descartes',
       version=version,
