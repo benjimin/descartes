@@ -1,3 +1,13 @@
+Changes
+=======
+
+Unless otherwise noted, issue and pull requests references are relative to
+https://bitbucket.org/sgillies/descartes.
+
+1.0.2 (2016-01-19)
+------------------
+- Slice coordinates to eliminate Z values of 3D geometries (PR #1).
+
 1.0.1 (2013-11-15)
 ------------------
 - Get long description in 'r' mode so setup works on Python 3.
