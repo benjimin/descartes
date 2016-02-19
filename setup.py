@@ -4,7 +4,7 @@ import warnings
 
 from setuptools import setup, find_packages
 
-version = '1.0.1'
+version = '1.0.2'
 description = open('README.txt', 'r').read()
 
 setup(name='descartes',
