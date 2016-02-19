@@ -41,8 +41,8 @@ def PolygonPath(polygon):
         vals[0] = Path.MOVETO
         return vals
     vertices = concatenate(
-                    [asarray(this.exterior)] 
-                    + [asarray(r) for r in this.interiors])
+                    [asarray(this.exterior)[:, :2]] 
+                    + [asarray(r)[:, :2] for r in this.interiors])
     codes = concatenate(
                 [coding(this.exterior)] 
                 + [coding(r) for r in this.interiors])
